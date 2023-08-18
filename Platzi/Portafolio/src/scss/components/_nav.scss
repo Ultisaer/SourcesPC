@@ -1,0 +1,18 @@
+// Posicionamiento del nav y color fondo
+.nav--element {
+  @include display-grid(auto, 150px auto 150px);
+
+  background-color: $focus-color;
+}
+
+// Alinamiento de los elementos internos del nav
+.nav__section{
+  @include flex(start , center, column);
+  
+  gap: 20px
+}
+.nav__icons{
+  @include flex(start , end, column);
+  
+  gap: 10px;
+}

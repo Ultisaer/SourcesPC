@@ -1,0 +1,598 @@
+/*/ Valores por default /*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*/ Colores usados durante todo el proceso /*/
+:root {
+	--PrimaryColor: #24053E;
+	--ActionsColor: #44FFA1;
+	--BackgroundColor: #FCF8FF;
+	--NetworkColor: #584D62;
+	--SecundaryColor: #FFFFFF;
+}
+
+/*/ Manejo de los rem como medida sustancial /*/
+html {
+	font-size: 62.5%;
+}
+
+/*/ Manejo de las fuentes /*/
+@font-face {
+	font-family: 'Fraunces';
+	src: url(./assets/fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf);
+}
+
+@font-face {
+	font-family: 'Manople';
+	src: url(./assets/fonts/manrope/Manrope-VariableFont_wght.ttf);
+}
+
+/*/ Evitar que los elementos se salgan de la pantalla / definimos los tipos de los elementos/*/
+body {
+	font-family: 'Manople', sans-serif;
+	background-color: var(--BackgroundColor);
+	overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Fraunces', sans-serif;
+}
+
+
+header {
+	width: 100%;
+	position: relative;
+	padding: 16px;
+	z-index: 4;
+	background-color: var(--PrimaryColor);
+}
+
+/*/ Elemento padre del nav logo y acceso/*/
+.nav-container {
+	margin-top: 16px;
+	height: 34px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.company-logo {
+	display: grid;
+	place-content: center;
+	z-index: 5;
+}
+
+.access-link {
+	z-index: 5;
+}
+
+.access-link a {
+	color: var(--SecundaryColor);
+	font-weight: 700;
+	line-height: 32px;
+	letter-spacing: -0.16px;
+	text-decoration: none;
+	font-size: 1.6rem;
+
+}
+
+.access-link a div {
+	background-color: var(--ActionsColor);
+	width: 124px;
+	height: 3px;
+}
+
+.access-link a:hover {
+	color: var(--ActionsColor);
+
+}
+
+/*/ Titulo principal /*/
+.header-title {
+	width: auto;
+	height: auto;
+	margin-top: 66px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+}
+
+h1 {
+	z-index: 5;
+	color: var(--SecundaryColor);
+	text-align: center;
+	font-size: 5rem;
+	line-height: 50px;
+	/* 100% */
+	font-weight: 600;
+}
+
+.underline {
+	text-decoration: underline;
+	text-decoration-color: var(--ActionsColor);
+	text-underline-offset: 6px;
+	text-decoration-thickness: 4px;
+}
+
+/*/ Boton y su interaccion /*/
+.action-btn {
+	z-index: 5;
+	width: 172px;
+	height: 55px;
+	font-family: 'Manople', sans-serif;
+	color: var(--PrimaryColor);
+	border-radius: 0;
+	border: 2px solid var(--ActionsColor);
+	background-color: var(--ActionsColor);
+	font-size: 1.6rem;
+	font-weight: 700;
+	letter-spacing: -0.16px;
+}
+
+.action-btn:hover {
+	background-color: var(--PrimaryColor);
+	color: var(--ActionsColor);
+}
+
+/*/ Elemento invisible que se camufla con el fondo para dar el efecto que la img esta en 2 bandos /*/
+.element-ghost-header {
+	z-index: 3;
+	position: relative;
+	margin-bottom: 20px;
+	top: -2px;
+	height: auto;
+	display: flex;
+	background-image: linear-gradient(to bottom, var(--PrimaryColor) 0%, var(--PrimaryColor) 50%, var(--BackgroundColor) 50%, var(--BackgroundColor) 100%);
+}
+
+.element-ghost-header svg {
+	position: absolute;
+	top: 49%;
+	left: 0;
+}
+
+.hero-image {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+
+}
+
+.hero-image img {
+	width: 90%;
+	height: auto;
+	object-fit: cover;
+}
+
+/*/ Generar un posicionamiento del svg sin afectar el flujo del contenido /*/
+.element-ghost-main {
+	position: relative;
+	bottom: 2px;
+}
+
+.element-ghost-main svg {
+	position: absolute;
+	top: 49%;
+	left: 0;
+}
+
+main {
+	padding: 16px;
+	position: relative;
+	top: -30px;
+	z-index: 2;
+	height: auto;
+}
+
+/*/ Imagen del contenedor en base a vectores /*/
+main svg {
+	margin-bottom: -10px;
+	position: absolute;
+	bottom: -50px;
+	left: 0;
+	z-index: -1;
+}
+
+/*/Elementos contenedores de la seccion principal de informacion /*/
+.information-section {
+	position: relative;
+	color: var(--NetworkColor);
+	display: grid;
+	gap: 40px;
+}
+
+.info-item {
+	text-align: center;
+	display: grid;
+	align-items: center;
+}
+
+.info-item h3 {
+	color: var(--dark-purple, #24053E);
+	font-size: 2.8rem;
+	font-style: normal;
+	font-weight: 600;
+	margin-bottom: 16px;
+}
+
+.info-item p {
+	color: var(--davys-grey, #584D62);
+	font-size: 1.6rem;
+	line-height: 28px;
+	/* 175% */
+}
+
+.info-number {
+	width: 48px;
+	height: 46px;
+	border-radius: 50%;
+	border: 1px solid var(--NetworkColor);
+	margin: 0 auto;
+	font-family: 'Fraunces', sans-serif;
+	font-size: 2rem;
+	line-height: 46px;
+	font-weight: 600;
+	margin-bottom: 24px;
+}
+
+
+footer {
+	padding: 32px 16px 16px 16px;
+	background-color: var(--SecundaryColor);
+	padding-top: 120px;
+}
+
+/*/ Contenedor principal del Fundador /*/
+.founder-section .founder-image {
+	padding: 0 20px;
+}
+
+.founder-image img {
+	width: 100%;
+}
+
+/*/ Contenedor de los detalles del fundador, descripcion/*/
+.founder-details {
+	transform: translateY(-80px);
+	background-color: var(--PrimaryColor);
+	padding: 32px;
+	color: var(--SecundaryColor);
+	text-align: center;
+}
+
+.founder-details h2 {
+	font-size: 3.2rem;
+	font-weight: 600;
+	line-height: 48px;
+	/* 150% */
+}
+
+.founder-details p {
+	font-size: 1.6rem;
+	font-weight: 400;
+	line-height: 28px;
+	/* 175% */
+	margin: 16px 0 24px 0;
+}
+
+/*/ Footer / Logo de la empresa / Redes sociales con su interaccion /*/
+.contact-section {
+	margin: 0 auto;
+	width: 116px;
+	height: 112px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 48px;
+
+	.social-network-container {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+
+		& svg:hover path {
+			fill: var(--PrimaryColor)
+		}
+	}
+}
+
+
+/*/ Cambio de tamaño del titulo del contenedor principal /*/
+@media (max-width: 300px) {
+	header nav .header-title h1 {
+		font-size: 3rem;
+	}
+
+}
+
+/*/Altura del contenedor /*/
+@media (max-width: 330px) {
+	main .action-btn {
+		margin-top: 50px
+	}
+}
+
+/*/ Cambio de tamaño del titulo y del fundador / Centrado de la imagen /*/
+@media (max-width: 375px) {
+
+	nav .header-title h1 {
+		font-size: 4rem;
+	}
+
+	nav .hero-image img {
+		margin-top: 10px;
+	}
+
+	nav .header-title {
+		gap: 10px;
+	}
+
+	main .information-section {
+		margin-top: 10px;
+	}
+
+	footer .founder-section .founder-details h2 {
+		font-size: 2.6rem;
+	}
+}
+
+/*/ Cambio de tamaño de los disposicion de los elementos de centrado/*/
+@media (min-width: 500px) {
+
+	header,
+	main,
+	footer {
+		padding: 36px;
+	}
+
+	footer {
+		padding-top: 180px
+	}
+
+	nav .header-title h1 {
+		font-size: 6rem;
+	}
+
+}
+
+/*/Establecer una medida fija de la imagen principal /*/
+@media (min-width: 520px) {
+	header .hero-image {
+		width: 480px;
+		margin: 0 auto;
+	}
+}
+
+/*/ Cambio de la disposicion de los elementos del contenedor de informacion /*/
+@media (min-width: 550px) {
+
+	/*/Cambio de la disposicion de los elementos/*/
+	main {
+		padding: 97px;
+	}
+
+	.information-section .info-item {
+		column-gap: 32px;
+	}
+
+	.information-section .info-item .info-number {
+		grid-area: 1 / 1 / 3 / 2;
+		margin-bottom: 0;
+	}
+
+	.information-section .info-item .info-number h3 {
+		grid-area: 1 / 2 / 2 / 3;
+	}
+
+	.information-section .info-item .info-number p {
+		grid-area: 2 / 2 / 3 / 3;
+	}
+
+	/*/Tamaño maximo de la escalada de la imagen/*/
+	.element-ghost-header .hero-image {
+		width: 480px;
+		height: 286px;
+		margin: 0 auto;
+	}
+
+	/*/Centrar el titulo /*/
+
+	header .header-title {
+		width: 500px;
+		margin: 66px auto 0 auto;
+	}
+
+}
+
+
+/*/Alineacion del titulo y parrafo del contenedor de informacion/*/
+.information-section .info-item p,
+.information-section .info-item h3 {
+
+	text-align: start;
+
+}
+
+
+/*/ Cambio de la visualizacion de los elementos del fundador /*/
+@media (min-width: 600px) {
+	footer {
+		padding-top: 350px;
+	}
+
+	.founder-section {
+		display: flex;
+	}
+
+	/*/ Escalado de la imagen/*/
+	.founder-image {
+		padding: 0;
+		transform: scale(1.5) translateX(5vw);
+	}
+
+	/*/ Eliminacion de translado centrado de los textos y aumento de tamaño del h2 /*/
+	.founder-details {
+		transform: translate(0px);
+		text-align: start;
+		margin-bottom: 80px;
+		padding: 56px;
+
+
+	}
+
+	.founder-details h2 {
+		font-size: 4.8rem;
+	}
+}
+
+
+/*/ Cambio de tamaño de la imagen principal/*/
+@media (min-width: 700px) {
+	.element-ghost-header .hero-image {
+		width: 550px;
+		height: 326px;
+		margin: 0 auto;
+	}
+
+	body .element-ghost-header .hero-image img {
+		width: 100%;
+	}
+}
+
+/*/ Establecer medida fija maxima del contenedor de la informacion /*/
+@media (min-width: 770px) {
+	main .information-section {
+		width: 570px;
+		margin: 0 auto;
+	}
+}
+
+/*/ Cambio del tamaño del titulo principal /*/
+@media (min-width: 800px) {
+	nav .header-title h1 {
+		font-size: 8rem;
+		text-align: center;
+		line-height: 80px;
+	}
+
+	header .nav-container .access-link a {
+		font-size: 1.8rem;
+	}
+
+	header .nav-container .access-link div {
+		width: 140px;
+	}
+
+}
+
+/*/ Establecer medida fija del fundador y posicionamientos de los escalados respecto a su espacio /*/
+@media (min-width: 850px) {
+	footer .founder-section {
+		width: 778px;
+		margin: 0 auto;
+	}
+
+	footer .founder-section .founder-image {
+		transform: scale(1.5) translate(44px);
+	}
+}
+
+/*/ Agrego de svg en el header y footer/*/
+@media (min-width: 900px) {
+	header::before {
+		content: url(./assets/images/bg-pattern-1.svg);
+		position: absolute;
+		top: 116px;
+		left: -140px;
+	}
+
+	nav::before {
+		content: url(./assets/images/bg-pattern-2.svg);
+		position: absolute;
+		right: 0px;
+		z-index: 5;
+		top: 290px;
+	}
+
+	.founder-details::before {
+		content: url(./assets/images/bg-pattern-3.svg);
+		position: absolute;
+		right: 50px;
+		bottom: -80px;
+	}
+
+}
+
+/*/ Disposicion original del contenedor de la informacion pero en la disposicion flex /*/
+@media (min-width: 1000px) {
+
+	main .information-section {
+		display: grid;
+		grid-template-columns: auto;
+		width: auto;
+		max-width: 1100px;
+		grid-auto-flow: column;
+	}
+
+	main .information-section .info-item {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	main .information-section .info-item .info-number {
+		margin-bottom: 30px;
+	}
+
+	main .information-section .info-item p,
+	main .information-section .info-item h3 {
+		text-align: center;
+	}
+}
+
+/*/ Cambio de tamaño del contenedor del founder/*/
+@media (min-width: 1100px) {
+	footer {
+		/*/Espaciado entre el footer main/*/
+		padding-top: 500px;
+	}
+
+	/*/Tamaño maximo estatico/*/
+	footer .founder-section {
+		width: 1000px;
+	}
+
+	footer .founder-section .founder-image {
+		transform: scale(1.3) translateX(40px) translateY(-80px);
+	}
+
+	footer .founder-section .founder-details {
+		margin-bottom: 120px;
+	}
+}
+
+/*/ Espaciado del contenedor del navbar /*/
+@media (min-width: 1175px) {
+	header {
+		padding: 56px 165px;
+	}
+}
+
+/*/ Tamaño de la imagen /*/
+@media (min-width: 1200px) {
+	.element-ghost-header .hero-image {
+		width: 750px;
+		height: 445px;
+	}
+}

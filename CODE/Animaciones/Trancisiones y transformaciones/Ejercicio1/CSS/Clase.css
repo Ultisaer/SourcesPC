@@ -1,0 +1,21 @@
+a:link
+{
+      color: red;
+      font-size: 20px;
+}
+a:visited
+{
+      color: wheat;
+}
+a:hover
+{
+      background-color: red;
+}
+p:not(.maravillas)
+{
+      color: green ;
+}
+.container div:nth-child(2)
+{
+      color:  blue;
+}

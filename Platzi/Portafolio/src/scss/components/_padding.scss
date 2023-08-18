@@ -1,0 +1,18 @@
+// Color y tamaño del contenedor 
+.projects{
+  background-color: $secondary-color;
+  padding: 20px;
+  @media (min-width: 800px){
+    padding: 50px;
+  }
+  @media (min-width: 1200px){
+    padding: 120px;
+  }
+  @media (min-width: 1400px){
+    padding: 60px;
+  }
+}
+.skills {
+  @extend .projects;
+  background-color: $primary-color;
+}

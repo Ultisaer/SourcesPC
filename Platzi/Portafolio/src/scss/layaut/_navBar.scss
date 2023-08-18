@@ -1,0 +1,31 @@
+.nav {
+  @include position-type (fixed , 0);
+  @include size(220px, 100%);
+  right: 0;
+  padding: 70px 35px;
+  z-index: 1;
+  
+  @media (min-width : 1076px)
+  {
+    padding: 70px 45px;
+    width: 300px;
+  }
+}
+
+@media (max-height: 600px) {
+  .nav__icons {
+    display: block;
+    margin-top: 50px;
+  }
+  .nav__link{
+    margin-right: 20px
+  }
+}
+@media (max-height: 545px) {
+  .nav__perfil{
+    display: none;
+  }
+  .nav--element{
+    grid-template-rows: 1fr;
+  }
+}

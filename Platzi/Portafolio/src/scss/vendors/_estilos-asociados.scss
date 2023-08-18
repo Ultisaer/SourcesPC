@@ -1,0 +1,31 @@
+/*/  Clases para los elementos de accions /*/
+.accionElements
+{
+  @include border;
+  @include font-size("xs");
+
+  background-color: $focus-color;
+
+  &:hover {
+    color: $focus-color;
+    background-color: $accions-color;
+    font-weight: 700;
+  }
+}
+
+/*/Llamado a los elementos de accion /*/
+// Botones
+  .skills__accion 
+  {
+    @extend .accionElements;
+  }
+// Elementos a
+  .detail__accion
+  {
+    @extend .accionElements;
+  }
+  
+// Cambia el comportamiento de bloque a grilla a los elementos de las estadisticas para que sea funcional
+body .slick-initialized .slick-slide {
+  display: grid;
+}

@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html
+{
+    font-size: 62.5%;
+}
+/*/variables de colores de la pantalla/*/
+:root
+{
+    --blue-dark  : #084c61;
+    --blue-middle: #739BA7;
+    --blue-light : #7ab9c1;
+    --white      : #f1fff0;
+    --brown      : #cdd1ca;
+}
+/*/fuente usada en la paguima web/*/
+body
+{
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+}
+/*/divide el espacio de la pantalla/*/
+.container-Portafolio
+{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+}
+/*/parte principal de la pantalla main/*/
+.container-portafolio-main
+{
+    background-color: var(--white);
+    height: 100vh;
+    width: 70vw;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    border: 5px solid var(--brown);
+    z-index: 15;
+}
+/*/triangulos de decoracion/*/
+.section-upper-left
+{
+    position: absolute;
+    width: 1440px;
+    height: 558px;
+    background-color: var(--blue-middle);
+    transform: rotate(-18.4deg);
+    top: -345.6px;
+    left: -192px;
+    z-index: 10;
+    border: 5px solid var(--brown);
+}
+.section-upper-right
+{
+    position: absolute;
+    top: -45px;
+    right: -315px;
+    width: 810px;
+    height: 540px;
+    background-color: var(--blue-dark);
+    transform: rotate(45deg);
+    z-index: 1;
+    border: 5px solid var(--brown);
+
+}
+.section-down-right
+{
+    position: absolute;
+    bottom: -243px;
+    right: -135px;
+    height: 684px;
+    width: 396px;
+    background-color: var(--blue-light);
+    z-index: 2;
+    transform: rotate(40deg);
+    border: 5px solid var(--brown);
+}
+.section-down-left
+{
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    bottom: -216px;
+    left: -180px;
+    background-color: var(--blue-dark);
+    transform: rotate(40deg);
+    border: 5px solid var(--brown);
+}
+/*/contenido del main/*/
+.section-container
+{
+    width: 70%;
+    height: auto;
+    position: absolute;
+    bottom: 35%;
+    left: 30px;
+}
+/*NAV BAR/ PARTE DERECHA*/
+.container-portafolio-networks
+{
+    background-color: var(--blue-middle);
+    width: 30vw;
+    height: 100vh;
+    overflow: hidden;
+    display: inline-block;
+    right: 0;
+    border: 5px solid var(--blue-dark);
+    position: relative;
+}
+.container-networks
+{
+    width: 80px;
+    height: 220px;
+    margin: 30px;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    display: grid;
+    grid-template-rows: repeat(3 , 1fr);
+    place-items: center center;
+}
+/*/recuadro de los elementos /*/
+.networks
+{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--white);
+    z-index: 20;
+    border: 5px solid var(--blue-dark);
+}
+/*/seccion de desplazamiento/*/
+.nav-bar
+{
+    width: 261px;
+    height: auto;
+    display: grid;
+    gap: 18px;
+    grid-template-rows: repeat(3, 1fr);
+    position: absolute;
+    right: 21%;
+    top: 95px;
+    z-index: 20;
+
+}
+.nav-bar-section
+{
+    width: 100%;
+    height: 63px;
+    background-color: var(--white);
+    border: 5px solid var(--blue-dark);
+}
+/*/media queries/*/

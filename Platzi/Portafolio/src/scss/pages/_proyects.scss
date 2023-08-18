@@ -1,0 +1,23 @@
+// Titulo ocupa el 100% contenedor
+.projects__title{
+  grid-area: 1 / 1 / 2 / 3;
+  margin-bottom: 60px
+}
+
+// Proyectos con carrucel principal
+.projects__elements{
+  @include display-grid(1fr, auto, column);
+
+  overflow: hidden; ////////ELEMENTO 100% NECESARIO PARA LOS SLICK DEL CARRUCEL
+
+  .projects__scroll {
+    @include border;
+  
+    position: relative;
+    min-height: 400px;
+    @media (min-width: 1400px) {
+      margin: 0 10px;
+    }
+  }
+}
+
